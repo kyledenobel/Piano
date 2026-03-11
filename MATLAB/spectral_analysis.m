@@ -1,6 +1,6 @@
 %% Introduction
 % For each note in piano_recordings, we should have an associated section
-% dedicated to analyzing the spectrum over 0.5 seconds. We will visualize
+% dedicated to analyzing the spectrum over 5 seconds. We will visualize
 % the spectrogram for each recording and map the frequency content in bins
 % of 20 Hz. Each 'bin' will have an associated best fit function that will be
 % its carrier which will be implemented on the device. We will also
