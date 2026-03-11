@@ -1,3 +1,8 @@
 NAMING CONVENTION
 -------------------------------------------
-<note>.wav
+<note>.m4a
+
+<note> includes O for octave before the note. 
+All sharps, no flats.
+Sharps designated by # after letter
+H for harpsicord
