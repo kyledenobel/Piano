@@ -10,6 +10,10 @@
 % represent the transience of the note being played.
 
 
+% lowest note is a C3, f = 130.81
+% frequency table here: https://www.phys.unsw.edu.au/jw/notes.html
+
+
 %% Example
 
 % read in audio sample

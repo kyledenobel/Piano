@@ -1,6 +1,6 @@
 NAMING CONVENTION
 -------------------------------------------
-<note>.m4a
+<note>.wav
 
 <note> includes O for octave before the note. 
 All sharps, no flats.

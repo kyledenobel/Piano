@@ -1,0 +1,37 @@
+A#.wav
+A.wav
+B.wav
+C#.wav
+C.wav
+D#.wav
+D.wav
+E.wav
+F#.wav
+F.wav
+G#.wav
+G.wav
+H A#.wav
+H A.wav
+H B.wav
+H C#.wav
+H C.wav
+H D#.wav
+H D.wav
+H E.wav
+H F#.wav
+H F.wav
+H G#.wav
+H G.wav
+O A#.wav
+O A.wav
+O B.wav
+O C#.wav
+O C.wav
+O D#.wav
+O D.wav
+O E.wav
+O F#.wav
+O F.wav
+O G#.wav
+O G.wav
+OO C.wav
