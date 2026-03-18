@@ -1,8 +1,10 @@
 #define ARDUINO_PIANO
 
+#include "key.hpp"
+
 
 void setup() {
-  // put your setup code here, to run once:
+  // initialize every key of the piano
 
 }
 

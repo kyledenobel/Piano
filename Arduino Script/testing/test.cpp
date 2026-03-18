@@ -16,6 +16,7 @@
 #include <cmath>
 
 #include "../piano/key.hpp"
+#include "../piano/keyboard.hpp"
 
 
 using namespace std;
