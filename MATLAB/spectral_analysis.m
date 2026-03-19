@@ -17,7 +17,7 @@
 %% Example
 
 % read in audio sample
-[x,Fs] = audioread("piano_recordings\C.wav");
+[x,Fs] = audioread(fullfile(pwd, "piano_recordings", "D.wav"));
 
 % calculate input window.
 T = 0.25;
@@ -27,11 +27,70 @@ win = Fs*T;
 [s,f,t] = spectrogram(x, win, [], [], Fs);
 
 % display spectrogram with hertz
-figure(1)
+figure
 spectrogram(x, win, [], [], Fs,'yaxis')
 ylim([0, 0.7])
 
 % display frequencies at 1 second into audio sample
-figure(2)
+figure
 plot(f, abs(s(:,find(t>1, 1))))
 xlim([0,1000])
+
+% Constants for spectral decomposition
+BIN_FREQ = 20; % 10 Hz frequency bins
+BIN_FREQ_INDEX = round(BIN_FREQ / (f(2) - f(1)));
+NUM_HARMONICS = 5;
+THRESHOLD_START_TIME_POWER = 1e5;
+THRESHOLD_LOCAL_MAX_POWER = 1e4;
+
+% Finding audio power from frequency spectrum
+audio_power = abs(s).^2; % Using magnitude of s to find maximums
+smoothed_audio_power = smoothdata(audio_power, 2, 'movmean', BIN_FREQ_INDEX);
+start_time_index = find(sum(smoothed_audio_power, 1) > THRESHOLD_START_TIME_POWER, 1);
+max_power_index = find(islocalmax(sum(smoothed_audio_power, 1)), 1);
+
+% Find harmonic frequencies and bin starts and ends
+local_max_index = find(islocalmax(smoothed_audio_power(:,max_power_index), 'MinProminence', THRESHOLD_LOCAL_MAX_POWER), 1);
+local_max_indices = local_max_index * (1:NUM_HARMONICS);
+bin_starts = max(local_max_indices - floor((BIN_FREQ_INDEX/2)), zeros(size(local_max_indices)) + 1);
+bin_ends = min(local_max_indices + ceil((BIN_FREQ_INDEX/2 - 1)), zeros(size(local_max_indices)) + length(f));
+
+% Find powers in harmonics
+harmonics_powers = zeros(NUM_HARMONICS, length(t));
+
+for hrmnc = 1:length(local_max_indices)
+    harmonics_powers(hrmnc, :) = sum(audio_power(bin_starts(hrmnc):bin_ends(hrmnc), :), 1);
+end
+
+% Plots for audio power and harmonic powers
+figure
+plot(t(start_time_index:end), sum(audio_power(:, start_time_index:end), 1))
+
+figure % Compare with fig 3 to ensure match
+plot(t(start_time_index:end), sum(harmonics_powers(:, start_time_index:length(t)), 1))
+
+figure
+hrmnc_num = 5;
+plot(t(start_time_index:end), harmonics_powers(hrmnc_num, start_time_index:length(t)))
+
+harmonics_magnitudes = sqrt(harmonics_powers);
+
+% Model to fit to is s(t) = alpha * t^(beta) * e^(-gamma * t), or
+% ln(s) = ln(alpha) + beta * ln(t) - gamma * t
+harmonics_parameters = zeros(NUM_HARMONICS, 3);
+
+for hrmnc = 1:length(local_max_indices)
+    A = [ones(length(t(start_time_index:end)), 1), log(t(start_time_index:end))', -t(start_time_index:end)'];
+    b = log(harmonics_magnitudes(hrmnc, start_time_index:end))';
+    harmonics_parameters(hrmnc, :) = reshape(lsqr(A, b), [1, 3]);
+    harmonics_parameters(hrmnc, 1) = exp(harmonics_parameters(hrmnc, 1));
+end
+
+% Plots for modeled curve and parameters
+figure
+hold on
+hrmnc_num = 1;
+plot(t(start_time_index:end), harmonics_magnitudes(hrmnc_num, start_time_index:length(t)))
+plot(t(start_time_index:end), harmonics_parameters(hrmnc, 1) * t(start_time_index:end).^(harmonics_parameters(hrmnc, 2)) .* exp(-harmonics_parameters(hrmnc, 3) * t(start_time_index:end)))
+hold off
+legend Actual Model
