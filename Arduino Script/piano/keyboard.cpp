@@ -33,6 +33,19 @@ Keyboard::Keyboard(freqs_t freqs[24], note_enclosures_t enclosures[24])
     num_active_keys = 0;
 }
 
+Keyboard::Keyboard()
+{
+    num_active_keys = 0;
+}
+
+Keyboard::Keyboard(const Keyboard& board)
+{
+    this->key_press_time = board.key_press_time;
+    this->keys = board.keys;
+    this->num_active_keys = board.num_active_keys;
+    this->pressed_keys = board.pressed_keys;
+}
+
 
 void Keyboard::press(std::vector<note_t> notes)
 {
@@ -69,4 +82,9 @@ double Keyboard::get_sound()
     // normalize
     sound = sound / static_cast<double>(num_active_keys);
     return sound;
+}
+
+std::map<Keyboard::note_t, Key> Keyboard::get_keys()
+{
+    return keys;
 }

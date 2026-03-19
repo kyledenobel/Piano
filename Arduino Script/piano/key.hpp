@@ -33,6 +33,7 @@ public:
      */
     void set_enclosure(const enclosure enclosure, const enclosure_selection_t selection);
 
+    double get_fundamental();
 
 private:
     // fundamental frequency of the note

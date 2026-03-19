@@ -55,3 +55,8 @@ void Key::set_enclosure(const enclosure enclosure, const enclosure_selection_t s
         break;
     }
 }
+
+double Key::get_fundamental()
+{
+    return fundamental;
+}

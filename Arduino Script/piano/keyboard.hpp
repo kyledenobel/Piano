@@ -56,7 +56,22 @@ public:
         Key::enclosure h4;
     } note_enclosures_t;
 
+    /**
+   * @brief constructor for a Keyboard object that initializes frequencies and enclosures
+   * @param freqs array for freqs_t in order from C to B_O
+   * @param enclosures array of enclosures in order from C to B_O
+   */
     Keyboard(freqs_t freqs[24], note_enclosures_t enclosures[24]);
+
+    /**
+   * @brief default constructor for Keyboard object
+   */
+    Keyboard();
+
+    /**
+   * @brief copy constructor for Keyboard object
+   */
+    Keyboard(const Keyboard& board);
 
     /**
      * @brief plays a single or multiple keys on a keyboard
@@ -72,9 +87,13 @@ public:
 
     /**
      * @brief gets the magnitude of the sum of all of the pressed notes
-     */
+    */
     double get_sound();
 
+    /**
+    * @brief returns all of the keys
+    */
+    std::map<note_t, Key> get_keys();
 
 private:
     // map to hold all of the keys
