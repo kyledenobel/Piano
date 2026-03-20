@@ -15,7 +15,9 @@ https://www.ti.com/lit/ds/symlink/pcf8574.pdf
 
 #include "key.hpp"
 #include "keyboard.hpp"
+#include "enclosure_funcs.hpp"
 #include <vector>
+#include "Arduino.h"
 
 // global Keyboard object
 Keyboard piano = Keyboard();
@@ -40,6 +42,29 @@ void setup() {
   Keyboard::note_enclosures_t enclosures[NUM_OF_KEYS];
 
   // initialize all freqs and enclosures
+  enclosures[Keyboard::C] = {.f = &enclosure_Cf_func,
+                            .h1 = &enclosure_Ch1_func,
+                            .h2 = &enclosure_Ch2_func,
+                            .h3 = &enclosure_Ch3_func,
+                            .h4 = &enclosure_Ch4_func};
+  enclosures[Keyboard::C_sharp] = {.f = &enclosure_C_Sharpf_func,
+                                  .h1 = &enclosure_C_sharph1_func,
+                                  .h2 = &enclosure_C_sharph2_func,
+                                  .h3 = &enclosure_C_sharph3_func, 
+                                  .h4 = &enclosure_C_sharph4_func};
+
+
+
+  freqs[Keyboard::C] = {.f = 131.8359,
+                        .h1 = 266.6016,
+                        .h2 = 401.3672,
+                        .h3 = 536.1328,
+                        .h4 = 670.8984};
+  freqs[Keyboard::C_sharp] = {.f = 137.6953,
+                              .h1 = 278.3203,
+                              .h2 = 418.9453, 
+                              .h3 = 559.5703,
+                              .h4 = 700.1953};
 
 
 
@@ -51,6 +76,16 @@ void setup() {
   Wire.begin();
   Wire.setClock(100000);
   Serial.println("finished initailization");
+
+  // initialize GPIO pins for DAC
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(5, OUTPUT);
 }
 
 void loop() {
@@ -115,8 +150,17 @@ void loop() {
   // TODO:remove
   Serial.println("sound = %f", sound);
 
-  // cast sound to a 
-  
-  
+  // cast sound to a uint8_t (unsigned char)
+  // sound is bounded between [-1, 1] 
+  // add 1 to get bounds between [0, 2]
+  // multiply by 128.0 to get bounds between [0, 256]
+  // cast to unsigned char to get 8 bits to send to DAC
+  unsigned char to_dac = (unsigned char) ((sound + 1) * 128.0)
 
+  // send to DAC via pins
+  for(int pin = 0; pin < 8; pin++)
+  {
+    digitalWrite(pin + 5, ((to_dac >> pin) & 0x1))
+  }
+  
 }

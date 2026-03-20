@@ -17,7 +17,7 @@
 %% Choosing file and visualizations
 
 % read in audio sample
-[x,Fs] = audioread(fullfile(pwd, "piano_recordings", "D.wav"));
+[x,Fs] = audioread(fullfile(pwd, "piano_recordings", "B.wav"));
 
 % calculate input window.
 T = 0.25;
@@ -147,7 +147,7 @@ function output=model_func(params, t)
     output=zeros(size(t));
     for tind = 1:length(t)
         if t(tind) < params(1)
-            output(tind) = params(2) / params(1) * t(tind);
+            output(tind) = (params(2) / params(1)) * t(tind);
         else
             output(tind) = params(2) * exp(-params(3) * ((t(tind)-params(1))^params(4)));
         end
@@ -164,3 +164,7 @@ plot(t(start_time_index:end), harmonics_magnitudes(hrmnc_num, start_time_index:e
 plot(t(start_time_index:end), model_func(harmonics_parameters(hrmnc_num, :), t(start_time_index:end)-t(start_time_index)))
 hold off
 legend Actual Model
+
+frequencies_to_use = f(local_max_indices);
+disp("freqs to use")
+disp(frequencies_to_use)
