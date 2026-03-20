@@ -17,7 +17,7 @@
 %% Choosing file and visualizations
 
 % read in audio sample
-[x,Fs] = audioread(fullfile(pwd, "piano_recordings", "B.wav"));
+[x,Fs] = audioread(fullfile(pwd, "piano_recordings", "E.wav"));
 
 % calculate input window.
 T = 0.25;
