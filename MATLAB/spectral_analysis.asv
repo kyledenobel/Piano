@@ -17,7 +17,7 @@
 %% Choosing file and visualizations
 
 % read in audio sample
-[x,Fs] = audioread(fullfile(pwd, "piano_recordings", "D.wav"));
+[x,Fs] = audioread(fullfile(pwd, "piano_recordings", "A#.wav"));
 
 % calculate input window.
 T = 0.25;
@@ -29,7 +29,7 @@ win = Fs*T;
 % display spectrogram with hertz
 figure
 spectrogram(x, win, [], [], Fs,'yaxis')
-ylim([0, 0.7])
+ylim([0, 1.2])
 
 % display frequencies at 1 second into audio sample
 figure
@@ -53,6 +53,11 @@ max_power_index = find(islocalmax(sum(smoothed_audio_power, 1)), 1);
 % Find harmonic frequencies and bin starts and ends
 local_max_index = find(islocalmax(smoothed_audio_power(:,max_power_index), 'MinProminence', THRESHOLD_LOCAL_MAX_POWER), 1);
 local_max_indices = local_max_index * (1:NUM_HARMONICS);
+
+% =======
+
+
+
 bin_starts = max(local_max_indices - floor((BIN_FREQ_INDEX/2)), zeros(size(local_max_indices)) + 1);
 bin_ends = min(local_max_indices + ceil((BIN_FREQ_INDEX/2 - 1)), zeros(size(local_max_indices)) + length(f));
 
@@ -69,6 +74,7 @@ hold on
 plot(t(start_time_index:last_time_index), sum(audio_power(:, start_time_index:last_time_index), 1))
 plot(t(start_time_index:last_time_index), sum(harmonics_powers(:, start_time_index:last_time_index), 1))
 legend("Original Spectral Powers", "Decomposed Spectral Powers")
+hold off
 
 figure
 hrmnc_num = 1;
@@ -119,6 +125,7 @@ harmonics_magnitudes = sqrt(harmonics_powers);
 % as the A matrix
 harmonics_parameters = ones(NUM_HARMONICS, 4);
 [local_max_values_harmonics, local_max_time_indices] = max(harmonics_magnitudes, [], 2);
+local_max_values_harmonics
 local_max_time_indices = local_max_time_indices - start_time_index;
 local_max_times = local_max_time_indices * T/2;
 harmonics_parameters(:, 1) = local_max_times;
@@ -142,15 +149,28 @@ for hrmnc = 1:length(local_max_indices)
     title("Matching Decaying Harmonics with Theoretical")
 end
 
-
+function output=model_func(params, t)
+    output=zeros(size(t));
+    for tind = 1:length(t)
+        if t(tind) < params(1)
+            output(tind) = (params(2) / params(1)) * t(tind);
+        else
+            output(tind) = params(2) * exp(-params(3) * ((t(tind)-params(1))^params(4)));
+        end
+    end
+end
 
 %% Plots for modeled curve and parameters
 figure
 hold on
-hrmnc_num = 2;
+hrmnc_num = 1;
 plot(t(start_time_index:end), harmonics_magnitudes(hrmnc_num, start_time_index:end))
-% Initial attempt: plot(t(start_time_index:end), harmonics_parameters(hrmnc, 1) * (t(start_time_index:end)-t(start_time_index-1)).^(harmonics_parameters(hrmnc, 2)) .* exp(-harmonics_parameters(hrmnc, 3) * (t(start_time_index:end)-t(start_time_index-1))))
+% Initial attempt: plot(t(start_time_index:end), harmonics_parameters(hrmnc_num, 1) * (t(start_time_index:end)-t(start_time_index-1)).^(harmonics_parameters(hrmnc_num, 2)) .* exp(-harmonics_parameters(hrmnc_num, 3) * (t(start_time_index:end)-t(start_time_index-1))))
 % Second and third attempts:
-plot(t(start_time_index:end), model_func(harmonics_parameters(hrmnc, :), t(start_time_index:end)))
+plot(t(start_time_index:end), model_func(harmonics_parameters(hrmnc_num, :), t(start_time_index:end)-t(start_time_index)))
 hold off
 legend Actual Model
+
+frequencies_to_use = f(local_max_indices);
+disp("freqs to use")
+disp(frequencies_to_use)

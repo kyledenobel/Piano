@@ -17,7 +17,7 @@
 %% Choosing file and visualizations
 
 % read in audio sample
-[x,Fs] = audioread(fullfile(pwd, "piano_recordings", "E.wav"));
+[x,Fs] = audioread(fullfile(pwd, "piano_recordings", "G.wav"));
 
 % calculate input window.
 T = 0.25;
@@ -29,7 +29,7 @@ win = Fs*T;
 % display spectrogram with hertz
 figure
 spectrogram(x, win, [], [], Fs,'yaxis')
-ylim([0, 0.7])
+ylim([0, 1.2])
 
 % display frequencies at 1 second into audio sample
 figure
@@ -53,6 +53,13 @@ max_power_index = find(islocalmax(sum(smoothed_audio_power, 1)), 1);
 % Find harmonic frequencies and bin starts and ends
 local_max_index = find(islocalmax(smoothed_audio_power(:,max_power_index), 'MinProminence', THRESHOLD_LOCAL_MAX_POWER), 1);
 local_max_indices = local_max_index * (1:NUM_HARMONICS);
+
+% ======= fixing local_max_indices ======= %
+[v, i] = max(sum(s, 1));
+audio_power__ = abs(s(:, i).^2);
+local_max_indices = find(islocalmax(audio_power__, 1, 'MaxNumExtrema',5, 'MinProminence',100), 5);
+
+
 bin_starts = max(local_max_indices - floor((BIN_FREQ_INDEX/2)), zeros(size(local_max_indices)) + 1);
 bin_ends = min(local_max_indices + ceil((BIN_FREQ_INDEX/2 - 1)), zeros(size(local_max_indices)) + length(f));
 
@@ -69,6 +76,7 @@ hold on
 plot(t(start_time_index:last_time_index), sum(audio_power(:, start_time_index:last_time_index), 1))
 plot(t(start_time_index:last_time_index), sum(harmonics_powers(:, start_time_index:last_time_index), 1))
 legend("Original Spectral Powers", "Decomposed Spectral Powers")
+hold off
 
 figure
 hrmnc_num = 1;

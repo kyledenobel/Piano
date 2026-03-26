@@ -18,6 +18,7 @@ https://www.ti.com/lit/ds/symlink/pcf8574.pdf
 #include "enclosure_funcs.hpp"
 #include <vector>
 #include "Arduino.h"
+#include "variant_DAISY_SEED.h"
 
 // global Keyboard object
 Keyboard piano = Keyboard();

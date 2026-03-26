@@ -40,6 +40,6 @@ play(player)
 
 %%
 f1 = frequencies_to_use(1);
-note = cos(2*pi*f1*t);
+note = 0.2*cos(2*pi*f1*t);
 player = audioplayer(note, Fs);
 play(player)

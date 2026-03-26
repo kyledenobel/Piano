@@ -1,0 +1,509 @@
+ARM GAS  C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 2
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"key.cpp"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.file 1 "key.cpp"
+  19              		.section	.text._Z5dummyd,"ax",%progbits
+  20              		.align	1
+  21              		.p2align 2,,3
+  22              		.global	_Z5dummyd
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	_Z5dummyd:
+  28              	.LVL0:
+  29              	.LFB546:
+   1:key.cpp       **** #include "key.hpp"
+   2:key.cpp       **** #include <cmath>
+   3:key.cpp       **** #ifdef ARDUINO_PIANO
+   4:key.cpp       **** #include "arduino.h"
+   5:key.cpp       **** #endif
+   6:key.cpp       **** 
+   7:key.cpp       **** #ifndef M_PI
+   8:key.cpp       **** #define M_PI 3.1415926535897932384626433832795
+   9:key.cpp       **** #endif
+  10:key.cpp       **** 
+  11:key.cpp       **** // dummy function used for key initialization
+  12:key.cpp       **** double dummy(double t) {return 1.0;};
+  30              		.loc 1 12 24 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  35              		.loc 1 12 25 view .LVU1
+  36              		.loc 1 12 36 is_stmt 0 view .LVU2
+  37 0000 B7EE000B 		vmov.f64	d0, #1.0e+0
+  38              	.LVL1:
+  39              		.loc 1 12 36 view .LVU3
+  40 0004 7047     		bx	lr
+  41              		.cfi_endproc
+  42              	.LFE546:
+  44 0006 00BF     		.section	.text._ZN3KeyC2Eddddd,"ax",%progbits
+  45              		.align	1
+  46              		.p2align 2,,3
+  47              		.global	_ZN3KeyC2Eddddd
+ARM GAS  C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s 			page 2
+
+
+  48              		.syntax unified
+  49              		.thumb
+  50              		.thumb_func
+  52              	_ZN3KeyC2Eddddd:
+  53              	.LVL2:
+  54              	.LFB548:
+  13:key.cpp       **** 
+  14:key.cpp       **** Key::Key(double f, double h1, double h2, double h3, double h4) :
+  55              		.loc 1 14 1 is_stmt 1 view -0
+  56              		.cfi_startproc
+  57              		@ args = 0, pretend = 0, frame = 0
+  58              		@ frame_needed = 0, uses_anonymous_args = 0
+  59              		@ link register save eliminated.
+  60              		.loc 1 14 1 is_stmt 0 view .LVU5
+  61 0000 084A     		ldr	r2, .L4
+  62              	.LBB2:
+  15:key.cpp       ****     fundamental(f), harmonic1(h1), harmonic2(h2), harmonic3(h3), harmonic4(h4)
+  63              		.loc 1 15 5 view .LVU6
+  64 0002 80ED000B 		vstr.64	d0, [r0]
+  65              		.loc 1 15 21 view .LVU7
+  66 0006 80ED021B 		vstr.64	d1, [r0, #8]
+  67              		.loc 1 15 36 view .LVU8
+  68 000a 80ED042B 		vstr.64	d2, [r0, #16]
+  69              		.loc 1 15 51 view .LVU9
+  70 000e 80ED063B 		vstr.64	d3, [r0, #24]
+  71              		.loc 1 15 66 view .LVU10
+  72 0012 80ED084B 		vstr.64	d4, [r0, #32]
+  16:key.cpp       **** {
+  17:key.cpp       ****     fundamental_enclosure = &dummy;
+  73              		.loc 1 17 5 is_stmt 1 view .LVU11
+  18:key.cpp       ****     harmonic1_enclosure = &dummy;
+  74              		.loc 1 18 5 view .LVU12
+  19:key.cpp       ****     harmonic2_enclosure = &dummy;
+  75              		.loc 1 19 5 view .LVU13
+  20:key.cpp       ****     harmonic3_enclosure = &dummy;
+  76              		.loc 1 20 5 view .LVU14
+  17:key.cpp       ****     harmonic1_enclosure = &dummy;
+  77              		.loc 1 17 27 is_stmt 0 view .LVU15
+  78 0016 C0E90A22 		strd	r2, r2, [r0, #40]
+  79 001a C0E90C22 		strd	r2, r2, [r0, #48]
+  21:key.cpp       ****     harmonic4_enclosure = &dummy;
+  80              		.loc 1 21 5 is_stmt 1 view .LVU16
+  81              		.loc 1 21 25 is_stmt 0 view .LVU17
+  82 001e 8263     		str	r2, [r0, #56]
+  83              	.LBE2:
+  22:key.cpp       **** }
+  84              		.loc 1 22 1 view .LVU18
+  85 0020 7047     		bx	lr
+  86              	.L5:
+  87 0022 00BF     		.align	2
+  88              	.L4:
+  89 0024 00000000 		.word	_Z5dummyd
+  90              		.cfi_endproc
+  91              	.LFE548:
+  93              		.global	_ZN3KeyC1Eddddd
+  94              		.thumb_set _ZN3KeyC1Eddddd,_ZN3KeyC2Eddddd
+  95              		.section	.text._ZN3Key14get_curr_valueEd,"ax",%progbits
+ARM GAS  C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s 			page 3
+
+
+  96              		.align	1
+  97              		.p2align 2,,3
+  98              		.global	_ZN3Key14get_curr_valueEd
+  99              		.syntax unified
+ 100              		.thumb
+ 101              		.thumb_func
+ 103              	_ZN3Key14get_curr_valueEd:
+ 104              	.LVL3:
+ 105              	.LFB550:
+  23:key.cpp       **** 
+  24:key.cpp       **** double Key::get_curr_value(const double t)
+  25:key.cpp       **** {
+ 106              		.loc 1 25 1 is_stmt 1 view -0
+ 107              		.cfi_startproc
+ 108              		@ args = 0, pretend = 0, frame = 8
+ 109              		@ frame_needed = 0, uses_anonymous_args = 0
+  26:key.cpp       ****     double f = (std::cos(2.0*M_PI*fundamental*t)) * (fundamental_enclosure(t));
+ 110              		.loc 1 26 5 view .LVU20
+  25:key.cpp       ****     double f = (std::cos(2.0*M_PI*fundamental*t)) * (fundamental_enclosure(t));
+ 111              		.loc 1 25 1 is_stmt 0 view .LVU21
+ 112 0000 10B5     		push	{r4, lr}
+ 113              		.cfi_def_cfa_offset 8
+ 114              		.cfi_offset 4, -8
+ 115              		.cfi_offset 14, -4
+ 116 0002 2DED108B 		vpush.64	{d8, d9, d10, d11, d12, d13, d14, d15}
+ 117              		.cfi_def_cfa_offset 72
+ 118              		.cfi_offset 80, -72
+ 119              		.cfi_offset 81, -68
+ 120              		.cfi_offset 82, -64
+ 121              		.cfi_offset 83, -60
+ 122              		.cfi_offset 84, -56
+ 123              		.cfi_offset 85, -52
+ 124              		.cfi_offset 86, -48
+ 125              		.cfi_offset 87, -44
+ 126              		.cfi_offset 88, -40
+ 127              		.cfi_offset 89, -36
+ 128              		.cfi_offset 90, -32
+ 129              		.cfi_offset 91, -28
+ 130              		.cfi_offset 92, -24
+ 131              		.cfi_offset 93, -20
+ 132              		.cfi_offset 94, -16
+ 133              		.cfi_offset 95, -12
+ 134 0006 B0EE409B 		vmov.f64	d9, d0
+ 135 000a 0446     		mov	r4, r0
+ 136 000c 82B0     		sub	sp, sp, #8
+ 137              		.cfi_def_cfa_offset 80
+ 138              		.loc 1 26 34 view .LVU22
+ 139 000e 90ED000B 		vldr.64	d0, [r0]
+ 140              	.LVL4:
+ 141              		.loc 1 26 34 view .LVU23
+ 142 0012 9FED31AB 		vldr.64	d10, .L8
+ 143 0016 20EE0A0B 		vmul.f64	d0, d0, d10
+ 144              		.loc 1 26 25 view .LVU24
+ 145 001a 20EE090B 		vmul.f64	d0, d0, d9
+ 146 001e FFF7FEFF 		bl	cos
+ 147              	.LVL5:
+ 148              		.loc 1 26 75 discriminator 1 view .LVU25
+ARM GAS  C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s 			page 4
+
+
+ 149 0022 A36A     		ldr	r3, [r4, #40]
+ 150              		.loc 1 26 25 view .LVU26
+ 151 0024 B0EE40EB 		vmov.f64	d14, d0
+ 152              		.loc 1 26 75 discriminator 1 view .LVU27
+ 153 0028 B0EE490B 		vmov.f64	d0, d9
+ 154 002c 9847     		blx	r3
+ 155              	.LVL6:
+ 156 002e B0EE40DB 		vmov.f64	d13, d0
+ 157              	.LVL7:
+  27:key.cpp       ****     double h1 = (std::cos(2.0*M_PI*harmonic1*t) * harmonic1_enclosure(t));
+ 158              		.loc 1 27 5 is_stmt 1 view .LVU28
+ 159              		.loc 1 27 35 is_stmt 0 view .LVU29
+ 160 0032 94ED027B 		vldr.64	d7, [r4, #8]
+ 161 0036 27EE0A0B 		vmul.f64	d0, d7, d10
+ 162              	.LVL8:
+ 163              		.loc 1 27 26 view .LVU30
+ 164 003a 20EE090B 		vmul.f64	d0, d0, d9
+ 165 003e FFF7FEFF 		bl	cos
+ 166              	.LVL9:
+ 167              		.loc 1 27 70 discriminator 1 view .LVU31
+ 168 0042 E36A     		ldr	r3, [r4, #44]
+ 169              		.loc 1 27 26 view .LVU32
+ 170 0044 B0EE408B 		vmov.f64	d8, d0
+ 171              		.loc 1 27 70 discriminator 1 view .LVU33
+ 172 0048 B0EE490B 		vmov.f64	d0, d9
+ 173 004c 9847     		blx	r3
+ 174              	.LVL10:
+ 175              		.loc 1 27 73 discriminator 2 view .LVU34
+ 176 004e 28EE008B 		vmul.f64	d8, d8, d0
+ 177              	.LVL11:
+  28:key.cpp       ****     double h2 = (std::cos(2.0*M_PI*harmonic2*t) * harmonic2_enclosure(t));
+ 178              		.loc 1 28 5 is_stmt 1 view .LVU35
+ 179              		.loc 1 28 35 is_stmt 0 view .LVU36
+ 180 0052 94ED047B 		vldr.64	d7, [r4, #16]
+ 181 0056 27EE0A0B 		vmul.f64	d0, d7, d10
+ 182              		.loc 1 28 26 view .LVU37
+ 183 005a 20EE090B 		vmul.f64	d0, d0, d9
+ 184 005e FFF7FEFF 		bl	cos
+ 185              	.LVL12:
+ 186              		.loc 1 28 70 discriminator 1 view .LVU38
+ 187 0062 236B     		ldr	r3, [r4, #48]
+ 188              		.loc 1 28 26 view .LVU39
+ 189 0064 B0EE40CB 		vmov.f64	d12, d0
+ 190              		.loc 1 28 70 discriminator 1 view .LVU40
+ 191 0068 B0EE490B 		vmov.f64	d0, d9
+ 192 006c 9847     		blx	r3
+ 193              	.LVL13:
+ 194 006e B0EE40BB 		vmov.f64	d11, d0
+ 195              	.LVL14:
+  29:key.cpp       ****     double h3 = (std::cos(2.0*M_PI*harmonic3*t) * harmonic3_enclosure(t));
+ 196              		.loc 1 29 5 is_stmt 1 view .LVU41
+ 197              		.loc 1 29 35 is_stmt 0 view .LVU42
+ 198 0072 94ED067B 		vldr.64	d7, [r4, #24]
+ 199 0076 27EE0A0B 		vmul.f64	d0, d7, d10
+ 200              	.LVL15:
+ 201              		.loc 1 29 26 view .LVU43
+ 202 007a 20EE090B 		vmul.f64	d0, d0, d9
+ARM GAS  C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s 			page 5
+
+
+ 203 007e FFF7FEFF 		bl	cos
+ 204              	.LVL16:
+ 205              		.loc 1 29 70 discriminator 1 view .LVU44
+ 206 0082 636B     		ldr	r3, [r4, #52]
+ 207              		.loc 1 29 26 view .LVU45
+ 208 0084 B0EE40FB 		vmov.f64	d15, d0
+ 209              		.loc 1 29 70 discriminator 1 view .LVU46
+ 210 0088 B0EE490B 		vmov.f64	d0, d9
+ 211 008c 9847     		blx	r3
+ 212              	.LVL17:
+ 213 008e 8DED000B 		vstr.64	d0, [sp]	@ int
+ 214              	.LVL18:
+  30:key.cpp       ****     double h4 = (std::cos(2.0*M_PI*harmonic4*t) * harmonic4_enclosure(t));
+ 215              		.loc 1 30 5 is_stmt 1 view .LVU47
+ 216              		.loc 1 30 35 is_stmt 0 view .LVU48
+ 217 0092 94ED080B 		vldr.64	d0, [r4, #32]
+ 218 0096 20EE0A0B 		vmul.f64	d0, d0, d10
+ 219              		.loc 1 30 26 view .LVU49
+ 220 009a 20EE090B 		vmul.f64	d0, d0, d9
+ 221 009e FFF7FEFF 		bl	cos
+ 222              	.LVL19:
+ 223              		.loc 1 30 70 discriminator 1 view .LVU50
+ 224 00a2 A36B     		ldr	r3, [r4, #56]
+ 225              		.loc 1 30 26 view .LVU51
+ 226 00a4 B0EE407B 		vmov.f64	d7, d0
+ 227              		.loc 1 30 70 discriminator 1 view .LVU52
+ 228 00a8 B0EE490B 		vmov.f64	d0, d9
+ 229              		.loc 1 30 26 view .LVU53
+ 230 00ac B0EE479B 		vmov.f64	d9, d7
+ 231              	.LVL20:
+ 232              		.loc 1 30 70 discriminator 1 view .LVU54
+ 233 00b0 9847     		blx	r3
+ 234              	.LVL21:
+  31:key.cpp       **** 
+  32:key.cpp       ****     return (1.0/5.0) * (f + h1 + h2 + h3 + h4);
+ 235              		.loc 1 32 5 is_stmt 1 view .LVU55
+ 236              		.loc 1 32 27 is_stmt 0 view .LVU56
+ 237 00b2 AEEE0D8B 		vfma.f64	d8, d14, d13
+ 238              	.LVL22:
+ 239              		.loc 1 32 37 view .LVU57
+ 240 00b6 9DED006B 		vldr.64	d6, [sp]	@ int
+ 241              		.loc 1 32 46 view .LVU58
+ 242 00ba 9FED097B 		vldr.64	d7, .L8+8
+ 243              		.loc 1 32 32 view .LVU59
+ 244 00be ACEE0B8B 		vfma.f64	d8, d12, d11
+ 245              		.loc 1 32 37 view .LVU60
+ 246 00c2 AFEE068B 		vfma.f64	d8, d15, d6
+ 247              		.loc 1 32 42 view .LVU61
+ 248 00c6 A9EE008B 		vfma.f64	d8, d9, d0
+  33:key.cpp       **** }
+ 249              		.loc 1 33 1 view .LVU62
+ 250 00ca 28EE070B 		vmul.f64	d0, d8, d7
+ 251              	.LVL23:
+ 252              		.loc 1 33 1 view .LVU63
+ 253 00ce 02B0     		add	sp, sp, #8
+ 254              		.cfi_def_cfa_offset 72
+ 255              	.LVL24:
+ARM GAS  C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s 			page 6
+
+
+ 256              		.loc 1 33 1 view .LVU64
+ 257              		@ sp needed
+ 258 00d0 BDEC108B 		vldm	sp!, {d8-d15}
+ 259              		.cfi_restore 94
+ 260              		.cfi_restore 95
+ 261              		.cfi_restore 92
+ 262              		.cfi_restore 93
+ 263              		.cfi_restore 90
+ 264              		.cfi_restore 91
+ 265              		.cfi_restore 88
+ 266              		.cfi_restore 89
+ 267              		.cfi_restore 86
+ 268              		.cfi_restore 87
+ 269              		.cfi_restore 84
+ 270              		.cfi_restore 85
+ 271              		.cfi_restore 82
+ 272              		.cfi_restore 83
+ 273              		.cfi_restore 80
+ 274              		.cfi_restore 81
+ 275              		.cfi_def_cfa_offset 8
+ 276              	.LVL25:
+ 277              		.loc 1 33 1 view .LVU65
+ 278 00d4 10BD     		pop	{r4, pc}
+ 279              	.LVL26:
+ 280              	.L9:
+ 281              		.loc 1 33 1 view .LVU66
+ 282 00d6 00BF     		.align	3
+ 283              	.L8:
+ 284 00d8 182D4454 		.word	1413754136
+ 285 00dc FB211940 		.word	1075388923
+ 286 00e0 9A999999 		.word	-1717986918
+ 287 00e4 9999C93F 		.word	1070176665
+ 288              		.cfi_endproc
+ 289              	.LFE550:
+ 291              		.section	.text._ZN3Key13set_enclosureEPFddENS_21enclosure_selection_tE,"ax",%progbits
+ 292              		.align	1
+ 293              		.p2align 2,,3
+ 294              		.global	_ZN3Key13set_enclosureEPFddENS_21enclosure_selection_tE
+ 295              		.syntax unified
+ 296              		.thumb
+ 297              		.thumb_func
+ 299              	_ZN3Key13set_enclosureEPFddENS_21enclosure_selection_tE:
+ 300              	.LVL27:
+ 301              	.LFB551:
+  34:key.cpp       **** 
+  35:key.cpp       **** void Key::set_enclosure(const enclosure enclosure, const enclosure_selection_t selection)
+  36:key.cpp       **** {
+ 302              		.loc 1 36 1 is_stmt 1 view -0
+ 303              		.cfi_startproc
+ 304              		@ args = 0, pretend = 0, frame = 0
+ 305              		@ frame_needed = 0, uses_anonymous_args = 0
+ 306              		@ link register save eliminated.
+  37:key.cpp       ****     switch (selection)
+ 307              		.loc 1 37 5 view .LVU68
+ 308 0000 042A     		cmp	r2, #4
+ 309 0002 05D8     		bhi	.L10
+ 310 0004 DFE802F0 		tbb	[pc, r2]
+ARM GAS  C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s 			page 7
+
+
+ 311              	.L13:
+ 312 0008 05       		.byte	(.L17-.L13)/2
+ 313 0009 07       		.byte	(.L16-.L13)/2
+ 314 000a 09       		.byte	(.L15-.L13)/2
+ 315 000b 0B       		.byte	(.L14-.L13)/2
+ 316 000c 03       		.byte	(.L12-.L13)/2
+ 317 000d 00       		.p2align 1
+ 318              	.L12:
+  38:key.cpp       ****     {
+  39:key.cpp       ****     case FUNDAMENTAL:
+  40:key.cpp       ****         fundamental_enclosure = enclosure;
+  41:key.cpp       ****         break;
+  42:key.cpp       ****     case HARMONIC1:
+  43:key.cpp       ****         harmonic1_enclosure = enclosure;
+  44:key.cpp       ****         break;
+  45:key.cpp       ****     case HARMONIC2:
+  46:key.cpp       ****         harmonic2_enclosure = enclosure;
+  47:key.cpp       ****         break;
+  48:key.cpp       ****     case HARMONIC3:
+  49:key.cpp       ****         harmonic3_enclosure = enclosure;
+  50:key.cpp       ****         break;
+  51:key.cpp       ****     case HARMONIC4:
+ 319              		.loc 1 51 5 view .LVU69
+  52:key.cpp       ****         harmonic4_enclosure = enclosure;
+ 320              		.loc 1 52 9 view .LVU70
+ 321              		.loc 1 52 29 is_stmt 0 view .LVU71
+ 322 000e 8163     		str	r1, [r0, #56]
+  53:key.cpp       ****         break;
+ 323              		.loc 1 53 9 is_stmt 1 view .LVU72
+ 324              	.L10:
+  54:key.cpp       ****     default:
+  55:key.cpp       ****         break;
+  56:key.cpp       ****     }
+  57:key.cpp       **** }
+ 325              		.loc 1 57 1 is_stmt 0 view .LVU73
+ 326 0010 7047     		bx	lr
+ 327              	.L17:
+  39:key.cpp       ****         fundamental_enclosure = enclosure;
+ 328              		.loc 1 39 5 is_stmt 1 view .LVU74
+  40:key.cpp       ****         break;
+ 329              		.loc 1 40 9 view .LVU75
+  40:key.cpp       ****         break;
+ 330              		.loc 1 40 31 is_stmt 0 view .LVU76
+ 331 0012 8162     		str	r1, [r0, #40]
+  41:key.cpp       ****     case HARMONIC1:
+ 332              		.loc 1 41 9 is_stmt 1 view .LVU77
+ 333 0014 7047     		bx	lr
+ 334              	.L16:
+  42:key.cpp       ****         harmonic1_enclosure = enclosure;
+ 335              		.loc 1 42 5 view .LVU78
+  43:key.cpp       ****         break;
+ 336              		.loc 1 43 9 view .LVU79
+  43:key.cpp       ****         break;
+ 337              		.loc 1 43 29 is_stmt 0 view .LVU80
+ 338 0016 C162     		str	r1, [r0, #44]
+  44:key.cpp       ****     case HARMONIC2:
+ 339              		.loc 1 44 9 is_stmt 1 view .LVU81
+ARM GAS  C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s 			page 8
+
+
+ 340 0018 7047     		bx	lr
+ 341              	.L15:
+  45:key.cpp       ****         harmonic2_enclosure = enclosure;
+ 342              		.loc 1 45 5 view .LVU82
+  46:key.cpp       ****         break;
+ 343              		.loc 1 46 9 view .LVU83
+  46:key.cpp       ****         break;
+ 344              		.loc 1 46 29 is_stmt 0 view .LVU84
+ 345 001a 0163     		str	r1, [r0, #48]
+  47:key.cpp       ****     case HARMONIC3:
+ 346              		.loc 1 47 9 is_stmt 1 view .LVU85
+ 347 001c 7047     		bx	lr
+ 348              	.L14:
+  48:key.cpp       ****         harmonic3_enclosure = enclosure;
+ 349              		.loc 1 48 5 view .LVU86
+  49:key.cpp       ****         break;
+ 350              		.loc 1 49 9 view .LVU87
+  49:key.cpp       ****         break;
+ 351              		.loc 1 49 29 is_stmt 0 view .LVU88
+ 352 001e 4163     		str	r1, [r0, #52]
+  50:key.cpp       ****     case HARMONIC4:
+ 353              		.loc 1 50 9 is_stmt 1 view .LVU89
+ 354 0020 7047     		bx	lr
+ 355              		.cfi_endproc
+ 356              	.LFE551:
+ 358 0022 00BF     		.section	.text._ZN3Key15get_fundamentalEv,"ax",%progbits
+ 359              		.align	1
+ 360              		.p2align 2,,3
+ 361              		.global	_ZN3Key15get_fundamentalEv
+ 362              		.syntax unified
+ 363              		.thumb
+ 364              		.thumb_func
+ 366              	_ZN3Key15get_fundamentalEv:
+ 367              	.LVL28:
+ 368              	.LFB552:
+  58:key.cpp       **** 
+  59:key.cpp       **** double Key::get_fundamental()
+  60:key.cpp       **** {
+ 369              		.loc 1 60 1 view -0
+ 370              		.cfi_startproc
+ 371              		@ args = 0, pretend = 0, frame = 0
+ 372              		@ frame_needed = 0, uses_anonymous_args = 0
+ 373              		@ link register save eliminated.
+  61:key.cpp       ****     return fundamental;
+ 374              		.loc 1 61 5 view .LVU91
+  62:key.cpp       **** }...
+ 375              		.loc 1 62 1 is_stmt 0 view .LVU92
+ 376 0000 90ED000B 		vldr.64	d0, [r0]
+ 377 0004 7047     		bx	lr
+ 378              		.cfi_endproc
+ 379              	.LFE552:
+ 381 0006 00BF     		.text
+ 382              	.Letext0:
+ 383              		.file 2 "C:/Program Files (x86)/GNU Tools Arm Embedded/version13-3/arm-none-eabi/include/c++/13.3.
+ 384              		.file 3 "C:/Program Files (x86)/GNU Tools Arm Embedded/version13-3/arm-none-eabi/include/c++/13.3.
+ 385              		.file 4 "C:/Program Files (x86)/GNU Tools Arm Embedded/version13-3/arm-none-eabi/include/math.h"
+ 386              		.file 5 "C:/Program Files (x86)/GNU Tools Arm Embedded/version13-3/arm-none-eabi/include/c++/13.3.
+ARM GAS  C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s 			page 9
+
+
+ 387              		.file 6 "key.hpp"
+ 388              		.file 7 "C:/Program Files (x86)/GNU Tools Arm Embedded/version13-3/arm-none-eabi/include/c++/13.3.
+ARM GAS  C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 key.cpp
+C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s:20     .text._Z5dummyd:00000000 $t
+C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s:27     .text._Z5dummyd:00000000 _Z5dummyd
+C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s:45     .text._ZN3KeyC2Eddddd:00000000 $t
+C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s:52     .text._ZN3KeyC2Eddddd:00000000 _ZN3KeyC2Eddddd
+C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s:89     .text._ZN3KeyC2Eddddd:00000024 $d
+C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s:52     .text._ZN3KeyC2Eddddd:00000000 _ZN3KeyC1Eddddd
+C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s:96     .text._ZN3Key14get_curr_valueEd:00000000 $t
+C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s:103    .text._ZN3Key14get_curr_valueEd:00000000 _ZN3Key14get_curr_valueEd
+C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s:284    .text._ZN3Key14get_curr_valueEd:000000d8 $d
+C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s:292    .text._ZN3Key13set_enclosureEPFddENS_21enclosure_selection_tE:00000000 $t
+C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s:299    .text._ZN3Key13set_enclosureEPFddENS_21enclosure_selection_tE:00000000 _ZN3Key13set_enclosureEPFddENS_21enclosure_selection_tE
+C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s:312    .text._ZN3Key13set_enclosureEPFddENS_21enclosure_selection_tE:00000008 $d
+C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s:359    .text._ZN3Key15get_fundamentalEv:00000000 $t
+C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s:366    .text._ZN3Key15get_fundamentalEv:00000000 _ZN3Key15get_fundamentalEv
+C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s:317    .text._ZN3Key13set_enclosureEPFddENS_21enclosure_selection_tE:0000000d $d
+C:\Users\Owner\AppData\Local\Temp\ccNC9rIJ.s:317    .text._ZN3Key13set_enclosureEPFddENS_21enclosure_selection_tE:0000000e $t
+
+UNDEFINED SYMBOLS
+cos
