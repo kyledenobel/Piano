@@ -17,7 +17,7 @@
 %% Choosing file and visualizations
 
 % read in audio sample
-[x,Fs] = audioread(fullfile(pwd, "piano_recordings", "G#.wav"));
+[x,Fs] = audioread(fullfile(pwd, "piano_recordings", "O B.wav"));
 
 % calculate input window.
 T = 0.25;
@@ -57,7 +57,9 @@ local_max_indices = local_max_index * (1:NUM_HARMONICS);
 % ======= fixing local_max_indices ======= %
 [v, i] = max(sum(s, 1));
 audio_power__ = abs(s(:, i).^2);
-local_max_indices = find(islocalmax(audio_power__, 1, 'MaxNumExtrema',NUM_HARMONICS, 'MinProminence',100) .* (f(1:numel(f)) > 100), NUM_HARMONICS);
+%local_max_indices = find(islocalmax(audio_power__, 1, 'MaxNumExtrema',NUM_HARMONICS, 'MinProminence',100) .* (f(1:numel(f)) > 100), NUM_HARMONICS);
+
+local_max_indices = find(islocalmax(abs(s(:,find(t>1, 1))), 1, 'MaxNumExtrema',NUM_HARMONICS, 'MinProminence',40) .* (f(1:numel(f)) > 200), NUM_HARMONICS);
 
 
 bin_starts = max(local_max_indices - floor((BIN_FREQ_INDEX/2)), zeros(size(local_max_indices)) + 1);
