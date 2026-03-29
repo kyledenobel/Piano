@@ -586,6 +586,14 @@ int main(void)
     for(;;)
     {
         daisy::System::GetUs();
+        if(!(C.Read()))
+        {
+            hardware.SetLed(true);
+        }
+        else
+        {
+            hardware.SetLed(false);
+        }
 
         // check if a pin is low
         for(int i = 0; i < NUM_OF_KEYS; i++)

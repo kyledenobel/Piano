@@ -10,11 +10,11 @@ t = 0:(1/Fs):3;
 function output=model_func(params, t)
     output=zeros(size(t));
     for tind = 1:length(t)
-        if t(tind) < params(1)
-            output(tind) = (params(2) / params(1)) * t(tind);
-        else
-            output(tind) = params(2) * exp(-params(3) * ((t(tind)-params(1))^params(4)));
-        end
+        %if t(tind) < params(1)
+        %    output(tind) = (params(2) / params(1)) * t(tind);
+        %else
+            output(tind) = params(2) * exp(-params(3) * ((t(tind))^params(4)));
+        %end
     end
 end
 
