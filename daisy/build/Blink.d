@@ -137,7 +137,8 @@ build/Blink.o: Blink.cpp \
  libDaisy/src/util/CpuLoadMeter.h libDaisy/src/util/PersistentStorage.h \
  libDaisy/src/per/qspi.h libDaisy/src/util/VoctCalibration.h \
  libDaisy/src/util/WaveTableLoader.h libDaisy/src/sys/fatfs.h \
- libDaisy/src/util/WavWriter.h key.hpp keyboard.hpp enclosure_funcs.hpp
+ libDaisy/src/util/WavWriter.h libDaisy/src/daisy.h key.hpp keyboard.hpp \
+ enclosure_funcs.hpp
 libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h:
 libDaisy/Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h750xx.h:
 libDaisy/Drivers/CMSIS/Include/core_cm7.h:
@@ -318,6 +319,7 @@ libDaisy/src/util/VoctCalibration.h:
 libDaisy/src/util/WaveTableLoader.h:
 libDaisy/src/sys/fatfs.h:
 libDaisy/src/util/WavWriter.h:
+libDaisy/src/daisy.h:
 key.hpp:
 keyboard.hpp:
 enclosure_funcs.hpp:
