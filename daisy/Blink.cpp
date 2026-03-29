@@ -45,17 +45,151 @@ int main(void)
     new_depress.reserve(NUM_OF_KEYS);
 
     // initialize all freqs and enclosures
-    enclosures[Keyboard::C] = {.f = &enclosure_Cf_func,
-                                .h1 = &enclosure_Ch1_func,
-                                .h2 = &enclosure_Ch2_func,
-                                .h3 = &enclosure_Ch3_func,
-                                .h4 = &enclosure_Ch4_func};
+        enclosures[Keyboard::C] = {.f = &enclosure_Cf_func,
+                                    .h1 = &enclosure_Ch1_func,
+                                    .h2 = &enclosure_Ch2_func,
+                                    .h3 = &enclosure_Ch3_func, 
+                                    .h4 = &enclosure_Ch4_func};
 
-    enclosures[Keyboard::C_sharp] = {.f = &enclosure_C_Sharpf_func,
+    enclosures[Keyboard::C_Sharp] = {.f = &enclosure_C_Sharpf_func,
                                     .h1 = &enclosure_C_Sharph1_func,
                                     .h2 = &enclosure_C_Sharph2_func,
                                     .h3 = &enclosure_C_Sharph3_func, 
                                     .h4 = &enclosure_C_Sharph4_func};
+
+    enclosures[Keyboard::D] = {.f = &enclosure_Df_func,
+                                    .h1 = &enclosure_Dh1_func,
+                                    .h2 = &enclosure_Dh2_func,
+                                    .h3 = &enclosure_Dh3_func, 
+                                    .h4 = &enclosure_Dh4_func};
+
+    enclosures[Keyboard::D_Sharp] = {.f = &enclosure_D_Sharpf_func,
+                                    .h1 = &enclosure_D_Sharph1_func,
+                                    .h2 = &enclosure_D_Sharph2_func,
+                                    .h3 = &enclosure_D_Sharph3_func, 
+                                    .h4 = &enclosure_D_Sharph4_func};
+
+
+    enclosures[Keyboard::E] = {.f = &enclosure_Ef_func,
+                                    .h1 = &enclosure_Eh1_func,
+                                    .h2 = &enclosure_Eh2_func,
+                                    .h3 = &enclosure_Eh3_func, 
+                                    .h4 = &enclosure_Eh4_func};
+
+    enclosures[Keyboard::F] = {.f = &enclosure_Ff_func,
+                                    .h1 = &enclosure_Fh1_func,
+                                    .h2 = &enclosure_Fh2_func,
+                                    .h3 = &enclosure_Fh3_func, 
+                                    .h4 = &enclosure_Fh4_func};
+
+    enclosures[Keyboard::F_Sharp] = {.f = &enclosure_F_Sharpf_func,
+                                    .h1 = &enclosure_F_Sharph1_func,
+                                    .h2 = &enclosure_F_Sharph2_func,
+                                    .h3 = &enclosure_F_Sharph3_func, 
+                                    .h4 = &enclosure_F_Sharph4_func};
+                                    
+    enclosures[Keyboard::G] = {.f = &enclosure_Gf_func,
+                                    .h1 = &enclosure_Gh1_func,
+                                    .h2 = &enclosure_Gh2_func,
+                                    .h3 = &enclosure_Gh3_func, 
+                                    .h4 = &enclosure_Gh4_func};
+
+    enclosures[Keyboard::G_Sharp] = {.f = &enclosure_G_Sharpf_func,
+                                    .h1 = &enclosure_G_Sharph1_func,
+                                    .h2 = &enclosure_G_Sharph2_func,
+                                    .h3 = &enclosure_G_Sharph3_func, 
+                                    .h4 = &enclosure_G_Sharph4_func};
+
+    enclosures[Keyboard::A] = {.f = &enclosure_Af_func,
+                                    .h1 = &enclosure_Ah1_func,
+                                    .h2 = &enclosure_Ah2_func,
+                                    .h3 = &enclosure_Ah3_func, 
+                                    .h4 = &enclosure_Ah4_func};
+
+    enclosures[Keyboard::A_Sharp] = {.f = &enclosure_A_Sharpf_func,
+                                    .h1 = &enclosure_A_Sharph1_func,
+                                    .h2 = &enclosure_A_Sharph2_func,
+                                    .h3 = &enclosure_A_Sharph3_func, 
+                                    .h4 = &enclosure_A_Sharph4_func};
+                                    
+    enclosures[Keyboard::B] = {.f = &enclosure_Bf_func,
+                                    .h1 = &enclosure_Bh1_func,
+                                    .h2 = &enclosure_Bh2_func,
+                                    .h3 = &enclosure_Bh3_func, 
+                                    .h4 = &enclosure_Bh4_func};
+
+    enclosures[Keyboard::C_O] = {.f = &enclosure_C_Of_func,
+                                    .h1 = &enclosure_C_Oh1_func,
+                                    .h2 = &enclosure_C_Oh2_func,
+                                    .h3 = &enclosure_C_Oh3_func, 
+                                    .h4 = &enclosure_C_Oh4_func};
+
+    enclosures[Keyboard::C_Sharp_O] = {.f = &enclosure_C_O_Sharpf_func,
+                                    .h1 = &enclosure_C_O_Sharph1_func,
+                                    .h2 = &enclosure_C_O_Sharph2_func,
+                                    .h3 = &enclosure_C_O_Sharph3_func, 
+                                    .h4 = &enclosure_C_O_Sharph4_func};
+
+    enclosures[Keyboard::D_O] = {.f = &enclosure_D_Of_func,
+                                    .h1 = &enclosure_D_Oh1_func,
+                                    .h2 = &enclosure_D_Oh2_func,
+                                    .h3 = &enclosure_D_Oh3_func, 
+                                    .h4 = &enclosure_D_Oh4_func};
+
+    enclosures[Keyboard::D_Sharp_O] = {.f = &enclosure_D_O_Sharpf_func,
+                                    .h1 = &enclosure_D_O_Sharph1_func,
+                                    .h2 = &enclosure_D_O_Sharph2_func,
+                                    .h3 = &enclosure_D_O_Sharph3_func, 
+                                    .h4 = &enclosure_D_O_Sharph4_func};
+
+
+    enclosures[Keyboard::E_O] = {.f = &enclosure_E_Of_func,
+                                    .h1 = &enclosure_E_Oh1_func,
+                                    .h2 = &enclosure_E_Oh2_func,
+                                    .h3 = &enclosure_E_Oh3_func, 
+                                    .h4 = &enclosure_E_Oh4_func};
+
+    enclosures[Keyboard::F_O] = {.f = &enclosure_F_Of_func,
+                                    .h1 = &enclosure_F_Oh1_func,
+                                    .h2 = &enclosure_F_Oh2_func,
+                                    .h3 = &enclosure_F_Oh3_func, 
+                                    .h4 = &enclosure_F_Oh4_func};
+
+    enclosures[Keyboard::F_Sharp_O] = {.f = &enclosure_F_O_Sharpf_func,
+                                    .h1 = &enclosure_F_O_Sharph1_func,
+                                    .h2 = &enclosure_F_O_Sharph2_func,
+                                    .h3 = &enclosure_F_O_Sharph3_func, 
+                                    .h4 = &enclosure_F_O_Sharph4_func};
+                                    
+    enclosures[Keyboard::G_O] = {.f = &enclosure_G_Of_func,
+                                    .h1 = &enclosure_G_Oh1_func,
+                                    .h2 = &enclosure_G_Oh2_func,
+                                    .h3 = &enclosure_G_Oh3_func, 
+                                    .h4 = &enclosure_G_Oh4_func};
+
+    enclosures[Keyboard::G_Sharp_O] = {.f = &enclosure_G_O_Sharpf_func,
+                                    .h1 = &enclosure_G_O_Sharph1_func,
+                                    .h2 = &enclosure_G_O_Sharph2_func,
+                                    .h3 = &enclosure_G_O_Sharph3_func, 
+                                    .h4 = &enclosure_G_O_Sharph4_func};
+
+    enclosures[Keyboard::A_O] = {.f = &enclosure_A_Of_func,
+                                    .h1 = &enclosure_A_Oh1_func,
+                                    .h2 = &enclosure_A_Oh2_func,
+                                    .h3 = &enclosure_A_Oh3_func, 
+                                    .h4 = &enclosure_A_Oh4_func};
+
+    enclosures[Keyboard::A_Sharp_O] = {.f = &enclosure_A_O_Sharpf_func,
+                                    .h1 = &enclosure_A_O_Sharph1_func,
+                                    .h2 = &enclosure_A_O_Sharph2_func,
+                                    .h3 = &enclosure_A_O_Sharph3_func, 
+                                    .h4 = &enclosure_A_O_Sharph4_func};
+                                    
+    enclosures[Keyboard::B_O] = {.f = &enclosure_B_Of_func,
+                                    .h1 = &enclosure_B_Oh1_func,
+                                    .h2 = &enclosure_B_Oh2_func,
+                                    .h3 = &enclosure_B_Oh3_func, 
+                                    .h4 = &enclosure_B_Oh4_func};
 
 
 
@@ -65,7 +199,7 @@ int main(void)
                             .h3 = 536.1328,
                             .h4 = 670.8984};
 
-    freqs[Keyboard::C_sharp] = {.f = 137.6953,
+    freqs[Keyboard::C_Sharp] = {.f = 137.6953,
                                 .h1 = 278.3203,
                                 .h2 = 418.9453, 
                                 .h3 = 559.5703,
@@ -77,7 +211,7 @@ int main(void)
                             .h3 = 5.859375000000000e+02,
                             .h4 = 8.818359375000000e+02};
 
-    freqs[Keyboard::D_sharp] = {.f = 1.552734375000000e+02,
+    freqs[Keyboard::D_Sharp] = {.f = 1.552734375000000e+02,
                             .h1 = 3.105468750000000e+02,
                             .h2 = 4.658203125000000e+02,
                             .h3 = 6.210937500000000e+02,
@@ -95,7 +229,7 @@ int main(void)
                             .h3 = 6.972656250000000e+02,
                             .h4 = 1.224609375000000e+03};
 
-    freqs[Keyboard::F_sharp] = {.f = 1.845703125000000e+02,
+    freqs[Keyboard::F_Sharp] = {.f = 1.845703125000000e+02,
                             .h1 = 3.691406250000000e+02,
                             .h2 = 5.537109375000000e+02,
                             .h3 = 9.257812500000000e+02,
@@ -107,7 +241,7 @@ int main(void)
                           .h3 = 793.9453,
                           .h4 = 993.1641};
 
-    freqs[Keyboard::G_sharp] = {.f = 2.080078125000000e+02,
+    freqs[Keyboard::G_Sharp] = {.f = 2.080078125000000e+02,
                                 .h1 = 4.160156250000000e+02,
                                 .h2 = 6.240234375000000e+02,
                                 .h3 = 8.320312500000000e+02,
@@ -119,7 +253,7 @@ int main(void)
                         .h3 = 8.876953125000000e+02,
                         .h4 = 110351562500000e+03};
 
-    freqs[Keyboard::A_sharp] = {.f = 2.343750000000000e+02,
+    freqs[Keyboard::A_Sharp] = {.f = 2.343750000000000e+02,
                             .h1 = 4.658203125000000e+02,
                             .h2 = 7.001953125000000e+02,
                             .h3 = 9.316406250000000e+02,
@@ -137,7 +271,7 @@ int main(void)
                             .h3 = 1.048828125000000e+03,
                             .h4 = 1.312500000000000e+03};
 
-    freqs[Keyboard::C_sharp_O] = {.f = 2.753906250000000e+02,
+    freqs[Keyboard::C_Sharp_O] = {.f = 2.753906250000000e+02,
                             .h1 = 5.537109375000000e+02,
                             .h2 = 1.954101562500000e+03,
                             .h3 = 2.238281250000000e+03,
@@ -149,7 +283,7 @@ int main(void)
                             .h3 = 1.473632812500000e+03,
                             .h4 = 1.772460937500000e+03};
 
-    freqs[Keyboard::D_sharp_O] = {.f = 3.105468750000000e+02,
+    freqs[Keyboard::D_Sharp_O] = {.f = 3.105468750000000e+02,
                             .h1 = 6.210937500000000e+02,
                             .h2 = 9.345703125000000e+02,
                             .h3 = 1.248046875000000e+03,
@@ -167,7 +301,7 @@ int main(void)
                             .h3 = 1.400390625000000e+03,
                             .h4 = 1.754882812500000e+03};
 
-    freqs[Keyboard::F_sharp_O] = {.f = 3.691406250000000e+02,
+    freqs[Keyboard::F_Sharp_O] = {.f = 3.691406250000000e+02,
                             .h1 = 7.412109375000000e+02,
                             .h2 = 1.110351562500000e+03,
                             .h3 = 1.860351562500000e+03,
@@ -180,7 +314,7 @@ int main(void)
                           .h4 = 2.373046875000000e+03};
 
 //null it 
-    freqs[Keyboard::G_sharp_O] = {.f = 4.160156250000000e+02,
+    freqs[Keyboard::G_Sharp_O] = {.f = 4.160156250000000e+02,
                                 .h1 = 8.320312500000000e+02,
                                 .h2 = 1.248046875000000e+03,
                                 .h3 = 0,
@@ -193,7 +327,7 @@ int main(void)
                         .h4 = 2.217773437500000e+03};
 
 //null it
-    freqs[Keyboard::A_sharp_O] = {.f = 4.658203125000000e+02,
+    freqs[Keyboard::A_Sharp_O] = {.f = 4.658203125000000e+02,
                             .h1 = 9.345703125000000e+02,
                             .h2 = 1.400390625000000e+03,
                             .h3 = 1875,
