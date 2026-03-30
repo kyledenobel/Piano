@@ -16,10 +16,6 @@ daisy::DaisySeed hardware;
 
 int main(void)
 {
-    // Declare a variable to store the state we want to set for the LED.
-    bool led_state;
-    led_state = true;
-
     // Configure and Initialize the Daisy Seed
     // These are separate to allow reconfiguration of any of the internal
     // components before initialization.
@@ -45,7 +41,7 @@ int main(void)
     new_depress.reserve(NUM_OF_KEYS);
 
     // initialize all freqs and enclosures
-        enclosures[Keyboard::C] = {.f = &enclosure_Cf_func,
+    enclosures[Keyboard::C] = {.f = &enclosure_Cf_func,
                                     .h1 = &enclosure_Ch1_func,
                                     .h2 = &enclosure_Ch2_func,
                                     .h3 = &enclosure_Ch3_func, 
@@ -170,7 +166,7 @@ int main(void)
     enclosures[Keyboard::G_Sharp_O] = {.f = &enclosure_G_O_Sharpf_func,
                                     .h1 = &enclosure_G_O_Sharph1_func,
                                     .h2 = &enclosure_G_O_Sharph2_func,
-                                    .h3 = &enclosure_G_O_Sharph3_func, 
+                                    .h3 = &null_freq, 
                                     .h4 = &enclosure_G_O_Sharph4_func};
 
     enclosures[Keyboard::A_O] = {.f = &enclosure_A_Of_func,
@@ -183,7 +179,7 @@ int main(void)
                                     .h1 = &enclosure_A_O_Sharph1_func,
                                     .h2 = &enclosure_A_O_Sharph2_func,
                                     .h3 = &enclosure_A_O_Sharph3_func, 
-                                    .h4 = &enclosure_A_O_Sharph4_func};
+                                    .h4 = &null_freq};
                                     
     enclosures[Keyboard::B_O] = {.f = &enclosure_B_Of_func,
                                     .h1 = &enclosure_B_Oh1_func,
@@ -565,36 +561,16 @@ int main(void)
         last_press[i] = (gpio_arr[i])->Read();
     }
 
-
-
-
-
-
-
-    // // Set the onboard LED
-    // hardware.SetLed(led_state);
-    // // Toggle the LED state for the next time around.
-    // led_state = !led_state;
+    hardware.SetLed(true);
 
     // loop variables
     bool pin_val;
     double piano_val;
-    uint8_t dac_val;
-
+    uint16_t dac_val = 0;
 
     // Loop forever
     for(;;)
     {
-        daisy::System::GetUs();
-        if(!(C.Read()))
-        {
-            hardware.SetLed(true);
-        }
-        else
-        {
-            hardware.SetLed(false);
-        }
-
         // check if a pin is low
         for(int i = 0; i < NUM_OF_KEYS; i++)
         {
@@ -607,8 +583,8 @@ int main(void)
                 // check if key was already pressed
                 if(last_press[i] != pin_val)
                 {
-                    // new press, add to array of pressed pins
-                    new_press.push_back((Keyboard::note_t) i);
+                    // new press
+                    piano.press((Keyboard::note_t) i);
                 }
             }
 
@@ -618,8 +594,8 @@ int main(void)
                 // check if key was already depressed
                 if(last_press[i] != pin_val)
                 {
-                    // new depress, add to array of depressed pins
-                    new_depress.push_back((Keyboard::note_t) i);
+                    // new depress
+                    piano.depress((Keyboard::note_t) i);
                 }
             }
 
@@ -627,18 +603,11 @@ int main(void)
             last_press[i] = pin_val;
         }
 
-        // pass new press array to keyboard to signal a press
-        piano.press(new_press);
-        piano.depress(new_depress);
-
-        // clear new press and new depress vectors
-        new_press.clear();
-        new_depress.clear();
-
         // get new value from piano
         piano_val = piano.get_sound();
+        piano_val = piano_val * 2; // things just look kinda small so... we are making things bigger.
         // convert double to uint8_t
-        dac_val = static_cast<uint8_t>(((piano_val) + 1.0)*128.0);
+        dac_val = static_cast<uint16_t>(((piano_val) + 1.0)*128.0);
         // change dac
         dac.WriteValue(daisy::DacHandle::Channel::ONE, dac_val);
     }
