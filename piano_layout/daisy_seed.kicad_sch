@@ -4,6 +4,11 @@
 	(generator_version "9.0")
 	(uuid "7b0e7c9e-80ad-49df-9d68-d2d91bcba9c2")
 	(paper "A4")
+	(title_block
+		(title "Daisy Seed Pinout")
+		(date "2026-03-30")
+		(rev "1.0")
+	)
 	(lib_symbols
 		(symbol "MCU_Module:Electrosmith_Daisy_Seed_Rev4"
 			(exclude_from_sim no)
@@ -1192,7 +1197,7 @@
 	)
 	(text "Daisy Seed will be powered via USB from a computer"
 		(exclude_from_sim no)
-		(at 219.71 55.88 0)
+		(at 248.92 78.74 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1201,66 +1206,66 @@
 		(uuid "f0e64f9f-ce22-486d-a4a2-2415e7c84fd2")
 	)
 	(junction
-		(at 180.34 134.62)
+		(at 209.55 157.48)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "effd5c1f-8bfc-4bd3-944a-e587f3e367c3")
 	)
 	(no_connect
-		(at 180.34 55.88)
+		(at 209.55 78.74)
 		(uuid "1df90361-03cf-4477-90a9-2bbb82bf2415")
 	)
 	(no_connect
-		(at 154.94 101.6)
+		(at 184.15 124.46)
 		(uuid "29213814-9d83-469e-a808-89b2881ac4f9")
 	)
 	(no_connect
-		(at 154.94 76.2)
+		(at 184.15 99.06)
 		(uuid "2ee08f55-c01a-44c0-865d-ceb38c568450")
 	)
 	(no_connect
-		(at 154.94 73.66)
+		(at 184.15 96.52)
 		(uuid "62d1bffb-efd5-4401-a8d7-3d0bdb8f5b51")
 	)
 	(no_connect
-		(at 154.94 78.74)
+		(at 184.15 101.6)
 		(uuid "66471d4d-d75b-4cab-bde4-5f20930d5a81")
 	)
 	(no_connect
-		(at 182.88 55.88)
+		(at 212.09 78.74)
 		(uuid "7940291f-28ba-461a-9dc4-eb8fafbb6681")
 	)
 	(no_connect
-		(at 177.8 55.88)
+		(at 207.01 78.74)
 		(uuid "813ff5ae-a1c9-488c-ad43-08ea50ae5522")
 	)
 	(no_connect
-		(at 154.94 71.12)
+		(at 184.15 93.98)
 		(uuid "845b1802-53ab-46bc-a0f2-cf2a7246a7f5")
 	)
 	(no_connect
-		(at 154.94 111.76)
+		(at 184.15 134.62)
 		(uuid "8add64c8-da15-4ac5-9dc6-0cb153a4bcae")
 	)
 	(no_connect
-		(at 205.74 73.66)
+		(at 234.95 96.52)
 		(uuid "9a47d97f-953a-4771-968d-1f5fe31cbabc")
 	)
 	(no_connect
-		(at 154.94 109.22)
+		(at 184.15 132.08)
 		(uuid "c0b21440-afc2-4737-8bc3-4f8813120e40")
 	)
 	(no_connect
-		(at 154.94 119.38)
+		(at 184.15 142.24)
 		(uuid "e8888ab4-1d43-4349-8597-d6f90014afe9")
 	)
 	(no_connect
-		(at 205.74 71.12)
+		(at 234.95 93.98)
 		(uuid "f87528f1-f4a9-4d28-87eb-396211bc1b51")
 	)
 	(wire
 		(pts
-			(xy 205.74 93.98) (xy 214.63 93.98)
+			(xy 234.95 116.84) (xy 243.84 116.84)
 		)
 		(stroke
 			(width 0)
@@ -1270,7 +1275,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 134.62) (xy 182.88 132.08)
+			(xy 212.09 157.48) (xy 212.09 154.94)
 		)
 		(stroke
 			(width 0)
@@ -1280,7 +1285,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 99.06) (xy 154.94 99.06)
+			(xy 176.53 121.92) (xy 184.15 121.92)
 		)
 		(stroke
 			(width 0)
@@ -1290,7 +1295,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 132.08) (xy 177.8 134.62)
+			(xy 207.01 154.94) (xy 207.01 157.48)
 		)
 		(stroke
 			(width 0)
@@ -1300,7 +1305,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 83.82) (xy 154.94 83.82)
+			(xy 176.53 106.68) (xy 184.15 106.68)
 		)
 		(stroke
 			(width 0)
@@ -1310,7 +1315,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 81.28) (xy 214.63 81.28)
+			(xy 234.95 104.14) (xy 243.84 104.14)
 		)
 		(stroke
 			(width 0)
@@ -1320,7 +1325,7 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 134.62) (xy 182.88 134.62)
+			(xy 209.55 157.48) (xy 212.09 157.48)
 		)
 		(stroke
 			(width 0)
@@ -1330,7 +1335,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 134.62) (xy 180.34 134.62)
+			(xy 207.01 157.48) (xy 209.55 157.48)
 		)
 		(stroke
 			(width 0)
@@ -1340,7 +1345,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 109.22) (xy 214.63 109.22)
+			(xy 234.95 132.08) (xy 243.84 132.08)
 		)
 		(stroke
 			(width 0)
@@ -1350,7 +1355,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 114.3) (xy 214.63 114.3)
+			(xy 234.95 137.16) (xy 243.84 137.16)
 		)
 		(stroke
 			(width 0)
@@ -1360,7 +1365,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 91.44) (xy 154.94 91.44)
+			(xy 176.53 114.3) (xy 184.15 114.3)
 		)
 		(stroke
 			(width 0)
@@ -1370,7 +1375,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 114.3) (xy 154.94 114.3)
+			(xy 176.53 137.16) (xy 184.15 137.16)
 		)
 		(stroke
 			(width 0)
@@ -1380,7 +1385,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 88.9) (xy 214.63 88.9)
+			(xy 234.95 111.76) (xy 243.84 111.76)
 		)
 		(stroke
 			(width 0)
@@ -1390,7 +1395,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 116.84) (xy 154.94 116.84)
+			(xy 176.53 139.7) (xy 184.15 139.7)
 		)
 		(stroke
 			(width 0)
@@ -1400,7 +1405,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 78.74) (xy 214.63 78.74)
+			(xy 234.95 101.6) (xy 243.84 101.6)
 		)
 		(stroke
 			(width 0)
@@ -1410,7 +1415,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 96.52) (xy 214.63 96.52)
+			(xy 234.95 119.38) (xy 243.84 119.38)
 		)
 		(stroke
 			(width 0)
@@ -1420,7 +1425,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 104.14) (xy 154.94 104.14)
+			(xy 176.53 127) (xy 184.15 127)
 		)
 		(stroke
 			(width 0)
@@ -1430,7 +1435,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 116.84) (xy 214.63 116.84)
+			(xy 234.95 139.7) (xy 243.84 139.7)
 		)
 		(stroke
 			(width 0)
@@ -1440,7 +1445,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 96.52) (xy 154.94 96.52)
+			(xy 176.53 119.38) (xy 184.15 119.38)
 		)
 		(stroke
 			(width 0)
@@ -1450,7 +1455,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 93.98) (xy 154.94 93.98)
+			(xy 176.53 116.84) (xy 184.15 116.84)
 		)
 		(stroke
 			(width 0)
@@ -1460,7 +1465,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 86.36) (xy 154.94 86.36)
+			(xy 176.53 109.22) (xy 184.15 109.22)
 		)
 		(stroke
 			(width 0)
@@ -1470,7 +1475,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 106.68) (xy 214.63 106.68)
+			(xy 234.95 129.54) (xy 243.84 129.54)
 		)
 		(stroke
 			(width 0)
@@ -1480,7 +1485,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 111.76) (xy 214.63 111.76)
+			(xy 234.95 134.62) (xy 243.84 134.62)
 		)
 		(stroke
 			(width 0)
@@ -1490,7 +1495,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 119.38) (xy 214.63 119.38)
+			(xy 234.95 142.24) (xy 243.84 142.24)
 		)
 		(stroke
 			(width 0)
@@ -1500,7 +1505,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 101.6) (xy 214.63 101.6)
+			(xy 234.95 124.46) (xy 243.84 124.46)
 		)
 		(stroke
 			(width 0)
@@ -1510,7 +1515,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 99.06) (xy 214.63 99.06)
+			(xy 234.95 121.92) (xy 243.84 121.92)
 		)
 		(stroke
 			(width 0)
@@ -1520,7 +1525,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 86.36) (xy 214.63 86.36)
+			(xy 234.95 109.22) (xy 243.84 109.22)
 		)
 		(stroke
 			(width 0)
@@ -1530,7 +1535,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 88.9) (xy 154.94 88.9)
+			(xy 176.53 111.76) (xy 184.15 111.76)
 		)
 		(stroke
 			(width 0)
@@ -1540,7 +1545,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 68.58) (xy 213.36 68.58)
+			(xy 234.95 91.44) (xy 242.57 91.44)
 		)
 		(stroke
 			(width 0)
@@ -1550,7 +1555,7 @@
 	)
 	(hierarchical_label "D11 (B)"
 		(shape input)
-		(at 214.63 86.36 0)
+		(at 243.84 109.22 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1561,7 +1566,7 @@
 	)
 	(hierarchical_label "D8 (G#)"
 		(shape input)
-		(at 214.63 96.52 0)
+		(at 243.84 119.38 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1572,7 +1577,7 @@
 	)
 	(hierarchical_label "D19 (G O)"
 		(shape input)
-		(at 147.32 93.98 180)
+		(at 176.53 116.84 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1583,7 +1588,7 @@
 	)
 	(hierarchical_label "D9 (A)"
 		(shape input)
-		(at 214.63 99.06 0)
+		(at 243.84 121.92 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1594,7 +1599,7 @@
 	)
 	(hierarchical_label "D3 (D#)"
 		(shape input)
-		(at 214.63 109.22 0)
+		(at 243.84 132.08 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1605,7 +1610,7 @@
 	)
 	(hierarchical_label "D10 (A#)"
 		(shape input)
-		(at 214.63 101.6 0)
+		(at 243.84 124.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1616,7 +1621,7 @@
 	)
 	(hierarchical_label "D5 (F)"
 		(shape input)
-		(at 214.63 116.84 0)
+		(at 243.84 139.7 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1627,7 +1632,7 @@
 	)
 	(hierarchical_label "D16 (E O)"
 		(shape input)
-		(at 147.32 86.36 180)
+		(at 176.53 109.22 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1638,7 +1643,7 @@
 	)
 	(hierarchical_label "D27 (B O)"
 		(shape input)
-		(at 147.32 116.84 180)
+		(at 176.53 139.7 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1649,7 +1654,7 @@
 	)
 	(hierarchical_label "D20 (G# O)"
 		(shape input)
-		(at 147.32 96.52 180)
+		(at 176.53 119.38 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1660,7 +1665,7 @@
 	)
 	(hierarchical_label "D1 (C#)"
 		(shape input)
-		(at 214.63 114.3 0)
+		(at 243.84 137.16 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1671,7 +1676,7 @@
 	)
 	(hierarchical_label "D7 (G)"
 		(shape input)
-		(at 214.63 93.98 0)
+		(at 243.84 116.84 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1682,7 +1687,7 @@
 	)
 	(hierarchical_label "D17 (F O)"
 		(shape input)
-		(at 147.32 88.9 180)
+		(at 176.53 111.76 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1693,7 +1698,7 @@
 	)
 	(hierarchical_label "D15 (D# O)"
 		(shape input)
-		(at 147.32 83.82 180)
+		(at 176.53 106.68 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1704,7 +1709,7 @@
 	)
 	(hierarchical_label "D18 (F# O)"
 		(shape input)
-		(at 147.32 91.44 180)
+		(at 176.53 114.3 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1715,7 +1720,7 @@
 	)
 	(hierarchical_label "D14 (D O)"
 		(shape input)
-		(at 214.63 81.28 0)
+		(at 243.84 104.14 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1726,7 +1731,7 @@
 	)
 	(hierarchical_label "D6 (F#)"
 		(shape input)
-		(at 214.63 119.38 0)
+		(at 243.84 142.24 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1737,7 +1742,7 @@
 	)
 	(hierarchical_label "D12 (C O)"
 		(shape input)
-		(at 214.63 88.9 0)
+		(at 243.84 111.76 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1748,7 +1753,7 @@
 	)
 	(hierarchical_label "D26 (A# O)"
 		(shape input)
-		(at 147.32 114.3 180)
+		(at 176.53 137.16 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1759,7 +1764,7 @@
 	)
 	(hierarchical_label "To Speaker"
 		(shape input)
-		(at 147.32 104.14 180)
+		(at 176.53 127 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1770,7 +1775,7 @@
 	)
 	(hierarchical_label "D13 (C# O)"
 		(shape input)
-		(at 214.63 78.74 0)
+		(at 243.84 101.6 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1781,7 +1786,7 @@
 	)
 	(hierarchical_label "D0 (C)"
 		(shape input)
-		(at 213.36 68.58 0)
+		(at 242.57 91.44 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1792,7 +1797,7 @@
 	)
 	(hierarchical_label "D21 (A O)"
 		(shape input)
-		(at 147.32 99.06 180)
+		(at 176.53 121.92 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1803,7 +1808,7 @@
 	)
 	(hierarchical_label "D4 (E)"
 		(shape input)
-		(at 214.63 106.68 0)
+		(at 243.84 129.54 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1814,7 +1819,7 @@
 	)
 	(hierarchical_label "D2 (D)"
 		(shape input)
-		(at 214.63 111.76 0)
+		(at 243.84 134.62 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1825,7 +1830,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 180.34 134.62 0)
+		(at 209.55 157.48 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1834,7 +1839,7 @@
 		(fields_autoplaced yes)
 		(uuid "a3df1bea-97a9-4d0b-9c86-8c4b02a58942")
 		(property "Reference" "#PWR01"
-			(at 180.34 140.97 0)
+			(at 209.55 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1843,7 +1848,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 180.34 139.7 0)
+			(at 209.55 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1851,7 +1856,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 180.34 134.62 0)
+			(at 209.55 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1860,7 +1865,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 180.34 134.62 0)
+			(at 209.55 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1869,7 +1874,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 180.34 134.62 0)
+			(at 209.55 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1891,7 +1896,7 @@
 	)
 	(symbol
 		(lib_id "MCU_Module:Electrosmith_Daisy_Seed_Rev4")
-		(at 180.34 93.98 0)
+		(at 209.55 116.84 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1900,7 +1905,7 @@
 		(fields_autoplaced yes)
 		(uuid "ae154086-9ff2-4165-ae9f-f547c032e8c9")
 		(property "Reference" "A1"
-			(at 185.0233 129.54 0)
+			(at 214.2333 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1909,7 +1914,7 @@
 			)
 		)
 		(property "Value" "Electrosmith_Daisy_Seed_Rev4"
-			(at 185.0233 132.08 0)
+			(at 214.2333 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1918,7 +1923,7 @@
 			)
 		)
 		(property "Footprint" "Module:Electrosmith_Daisy_Seed"
-			(at 199.39 129.54 0)
+			(at 228.6 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1927,7 +1932,7 @@
 			)
 		)
 		(property "Datasheet" "https://static1.squarespace.com/static/58d03fdc1b10e3bf442567b8/t/6227e6236f02fb68d1577146/1646781988478/Daisy_Seed_datasheet_v1.0.3.pdf"
-			(at 257.81 132.08 0)
+			(at 287.02 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1936,7 +1941,7 @@
 			)
 		)
 		(property "Description" "Daisy is an embedded platform for music."
-			(at 180.34 93.98 0)
+			(at 209.55 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
