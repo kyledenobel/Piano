@@ -77,13 +77,13 @@ public:
      * @brief press a single or multiple keys on a keyboard
      * @param[in] notes pointer to a note array
      */
-    void press(const std::vector<note_t>& notes);
+    void press(const note_t notes);
 
     /**
      * @brief depresses a key
      * @param[in] notes pointer to a note array
      */
-    void depress(const std::vector<note_t>& notes);
+    void depress(const note_t notes);
 
     /**
      * @brief gets the magnitude of the sum of all of the pressed notes
@@ -100,7 +100,7 @@ private:
     // map to hold all of the keys
     std::unordered_map<note_t, Key> keys;
     // keeps track of time when the key was pressed
-    std::unordered_map<note_t, unsigned long> key_press_time;
+    std::unordered_map<note_t, uint32_t> key_press_time;
     // keeps track of pressed keys
     std::unordered_map<note_t, Key*> pressed_keys;
     // the current number of active keys pressed

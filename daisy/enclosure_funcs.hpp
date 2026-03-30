@@ -22,7 +22,7 @@
 //     }
 
 
-double null_freq() {return 0.0; }
+double null_freq(double t) {return 0.0; }
 
 
 #define CREATE_ENCLOSURE_FUNC(NOTE, B1, B2, B3, B4, DIV) \

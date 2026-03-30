@@ -35,36 +35,34 @@ Keyboard::Keyboard(const Keyboard& board)
 }
 
 
-void Keyboard::press(const std::vector<note_t>& notes)
+void Keyboard::press(const note_t note)
 {
     unsigned long curr_time = daisy::System::GetUs();
-    for(note_t note : notes)
-    {
-        pressed_keys.insert({note, &keys.at(note)});
-        key_press_time.at(note) = curr_time;
-    }
+    pressed_keys.insert({note, &keys.at(note)});
+    key_press_time.at(note) = curr_time;
     num_active_keys++;
 }
 
-void Keyboard::depress(const std::vector<note_t>& notes)
+void Keyboard::depress(const note_t note)
 {
-    for(note_t note : notes)
-    {
-        pressed_keys.erase(note);
-    }
+    pressed_keys.erase(note);
     num_active_keys--;
 }
 
 double Keyboard::get_sound()
 {
+    if(num_active_keys == 0)
+    {
+        return 0.0;
+    }
     double sound = 0.0;
-    unsigned long curr_time = daisy::System::GetUs();
+    uint32_t curr_time = daisy::System::GetUs();
     double elapsed_time;
     note_t curr_note;
     for(auto iter = pressed_keys.begin(); iter != pressed_keys.end(); iter++)
     {
         curr_note = iter->first;
-        elapsed_time = static_cast<double>(curr_time - key_press_time.at(curr_note)) / 0.000001;
+        elapsed_time = static_cast<double>(curr_time - key_press_time.at(curr_note)) * 0.000001;
         sound += iter->second->get_curr_value(elapsed_time);
     }
     // normalize
