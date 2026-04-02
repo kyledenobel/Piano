@@ -523,7 +523,7 @@ int main(void)
     G_O.Init(gpio_cfg);
 
     // G# O
-    gpio_pin.pin = 11;
+    gpio_pin.pin = 1;
     gpio_pin.port = daisy::GPIOPort::PORTC;
     gpio_cfg.pin = gpio_pin;
     G_Sharp_O.Init(gpio_cfg);
