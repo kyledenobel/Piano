@@ -32,7 +32,9 @@ end
 note = note./5;
 
 figure
-plot(note)
+plot(t, note)
+xlabel("Time (s)")
+ylabel("Amplitude")
 
 player = audioplayer(note, Fs);
 play(player)

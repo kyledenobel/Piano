@@ -173,6 +173,8 @@ plot(t(start_time_index:end), harmonics_magnitudes(hrmnc_num, start_time_index:e
 plot(t(start_time_index:end), model_func(harmonics_parameters(hrmnc_num, :), t(start_time_index:end)-t(start_time_index)))
 hold off
 legend Actual Model
+xlabel("Time (s)")
+ylabel("Amplitude")
 
 frequencies_to_use = f(local_max_indices);
 disp("freqs to use")
