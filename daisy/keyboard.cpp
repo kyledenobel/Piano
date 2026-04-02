@@ -8,7 +8,7 @@
 Keyboard::Keyboard(freqs_t freqs[24], note_enclosures_t enclosures[24])
 {
     unsigned long curr_time = daisy::System::GetUs();
-    for(int i = Keyboard::note_t::C; i < Keyboard::note_t::B_O; i++)
+    for(int i = Keyboard::note_t::C; i <= Keyboard::note_t::B_O; i++)
     {
         keys.emplace(std::make_pair((Keyboard::note_t)i, Key(freqs[i].f, freqs[i].h1, freqs[i].h2, freqs[i].h3, freqs[i].h4)));
         keys.at((Keyboard::note_t)i).set_enclosure(enclosures[i].f, Key::FUNDAMENTAL);
